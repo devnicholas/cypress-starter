@@ -1,0 +1,17 @@
+{
+  "name": "cypress-lab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --browser chrome"
+  },
+  "devDependencies": {
+    "cypress": "^13.14.1",
+    "cypress-plugin-snapshots": "^1.4.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

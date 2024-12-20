@@ -1,0 +1,5 @@
+.env
+node_modules
+__image_snapshots__
+__snapshots__
+screenshots
