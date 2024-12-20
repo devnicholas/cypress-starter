@@ -1,5 +1,12 @@
 import { click, type, snapshot, imageSnapshot } from "./actions";
+import "../core/types";
 
+/**
+ * Verifica elementos padrão na página.
+ *
+ * - Garante que o conteúdo da página não contém o texto "lorem ipsum".
+ * - Verifica que os elementos especificados (ex.: "main") estão visíveis na página.
+ */
 export const verifyStandardElements = () => {
   cy.root().should("not.contain.text", /lorem ipsum/i);
 
@@ -8,6 +15,11 @@ export const verifyStandardElements = () => {
   });
 };
 
+/**
+ * Executa uma sequência de passos em elementos da página.
+ *
+ * @param {Step[]} steps - Lista de passos a serem executados.
+ */
 export const executeSteps = (steps) => {
   steps.forEach(({ element, text, should, action, value, callback }) => {
     if (callback) {
