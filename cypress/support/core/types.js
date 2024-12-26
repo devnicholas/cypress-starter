@@ -7,6 +7,14 @@
  */
 
 /**
+ * Representa uma configuração para asserções em testes do Cypress.
+ *
+ * @typedef {Object} ViewportObject
+ * @property {number} width - A largura do viewport em pixels.
+ * @property {number} height - A altura do viewport em pixels.
+ */
+
+/**
  * Representa uma etapa de teste a ser executada em uma página.
  *
  * @typedef {Object} Step
@@ -19,6 +27,7 @@
  * - `"snapshot"`: Captura um snapshot visual do elemento.
  * - `"imageSnapshot"`: Captura um snapshot de imagem do elemento.
  * @property {string} [value] - Valor a ser inserido em um campo de texto durante a ação `type`. Ignorado para outras ações.
+ * @property {string|ViewportObject} [viewport] - Define um viewport personalizado para a execução dos testes. Veja as opções disponíveis em: https://on.cypress.io/viewport
  * @property {Function} [callback] - Função de callback personalizada para executar ações adicionais ou substitutivas.
  */
 

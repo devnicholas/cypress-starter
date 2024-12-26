@@ -21,10 +21,18 @@ export const verifyStandardElements = () => {
  * @param {Step[]} steps - Lista de passos a serem executados.
  */
 export const executeSteps = (steps) => {
-  steps.forEach(({ element, text, should, action, value, callback }) => {
+  steps.forEach(({ element, text, should, action, value, viewport, callback }) => {
     if (callback) {
       callback();
       return;
+    }
+
+    if (viewport) {
+      if (typeof viewport === "object") {
+        cy.viewport(viewport.width, viewport.height);
+      } else {
+        cy.viewport(viewport);
+      }
     }
 
     let selector = false;
